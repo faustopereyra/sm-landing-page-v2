@@ -1,5 +1,6 @@
 import VideoThumb from '@/public/images/hero-image.png'
 import ModalVideo from '@/components/modal-video'
+import Link from 'next/link'
 
 export default function Hero() {
   return (
@@ -28,20 +29,22 @@ export default function Hero() {
         <div className="pt-32 pb-12 md:pt-40 md:pb-20">
 
           {/* Section header */}
-          <div className="text-center pb-12 md:pb-16">
-            <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">Make your website <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">wonderful</span></h1>
-            <div className="max-w-3xl mx-auto">
-              <p className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">Our landing page template works on all devices, so you only have to set it up once, and get beautiful results forever.</p>
-              <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300">
+          <div className="pb-12 md:pb-16">
+            <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4 text-center md:text-left" data-aos="zoom-y-out">Revolutionize Your Business with Cutting-Edge <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">AI Chatbots</span></h1>
+            <div className="flex flex-col items-center md:items-start"> {/* Alinea los elementos en el centro en dispositivos pequeños y a la izquierda en dispositivos medianos y más grandes */}
+              <p className="text-xl text-gray-600 mb-8 text-center md:text-left" data-aos="zoom-y-out" data-aos-delay="150">Smart AI Solutions for Smarter Business Operations</p>
+              <div className="max-w-xs sm:max-w-none flex flex-col md:flex-row items-start"> {/* Alinea los elementos a la izquierda en dispositivos medianos y más grandes */}
                 <div>
-                  <a className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0" href="#0">Start free trial</a>
+                  <Link className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 md:mb-0 md:w-auto min-w-48" href="#0">Get started today</Link>
                 </div>
                 <div>
-                  <a className="btn text-white bg-gray-900 hover:bg-gray-800 w-full sm:w-auto sm:ml-4" href="#0">Learn more</a>
+                  <a className="btn text-white bg-gray-900 hover:bg-gray-800 w-full md:w-auto md:ml-4 min-w-48" href="#0">Try our demo</a>
                 </div>
               </div>
             </div>
-          </div>
+        </div>
+
+
 
           {/* Hero image */}
           <ModalVideo
