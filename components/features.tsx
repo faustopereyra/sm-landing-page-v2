@@ -3,8 +3,9 @@
 import { useState, useRef, useEffect } from 'react'
 import { Transition } from '@headlessui/react'
 import Image from 'next/image'
-import FeaturesBg from '@/public/images/features-bg.png'
-import FeaturesElement from '@/public/images/features-element.png'
+import ClientSupportBot from "@/public/images/SupBotMockVertical.jpg"
+import LeadGeneratorBot from "@/public/images/LeadBotMockVertical.jpg"
+import AdminBot from "@/public/images/AdminBotMockVertical.jpg"
 
 export default function Features() {
   
@@ -33,7 +34,7 @@ export default function Features() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
             <h1 className="h2 mb-4">Explore the solutions</h1>
-            <p className="text-xl text-gray-600">Integrating chatbots into your business offers numerous benefits, including 24/7 support, cost savings, increased sales, and valuable data insights, making them a game-changer for your operations.</p>
+            <p className="text-xl text-gray-600">We devise an AI conversational chatbot specifically tailored to your needs. We handle the entire development process, from the initial design to the final deployment.</p>
           </div>
 
           {/* Section content */}
@@ -43,7 +44,7 @@ export default function Features() {
             <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 md:mt-6" data-aos="fade-right">
               <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-8">
                 <h3 className="h3 mb-3">Our Chatbots</h3>
-                <p className="text-xl text-gray-600">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa.</p>
+                <p className="text-xl text-gray-600">We offer a variety of chatbots, among them stand out...</p>
               </div>
               {/* Tabs buttons */}
               <div className="mb-8 md:mb-0">
@@ -52,10 +53,10 @@ export default function Features() {
                   href="#0"
                   onClick={(e) => { e.preventDefault(); setTab(1); }}
                 >
-                  <div>
-                    <div className="font-bold leading-snug tracking-tight mb-1">Efficient Customer Service Automation</div>
-                    <div className="text-gray-600">Our chatbots efficiently and personally handle customer queries 24/7, enhancing the customer experience while reducing your team's workload, freeing them for strategic tasks.</div>
-                  </div>
+                 <div>
+                    <div className="font-bold leading-snug tracking-tight mb-1">High-Quality Lead Generation</div>
+                    <div className="text-gray-600">We create chatbots that generate high-quality leads, gathering valuable information and qualifying leads before your sales team's involvement, improving the efficiency of your customer acquisition process.</div>
+                  </div>                  
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
                     <svg className="w-3 h-3 fill-current" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                       <path d="M11.953 4.29a.5.5 0 00-.454-.292H6.14L6.984.62A.5.5 0 006.12.173l-6 7a.5.5 0 00.379.825h5.359l-.844 3.38a.5.5 0 00.864.445l6-7a.5.5 0 00.075-.534z" />
@@ -68,8 +69,8 @@ export default function Features() {
                   onClick={(e) => { e.preventDefault(); setTab(2); }}
                 >
                   <div>
-                    <div className="font-bold leading-snug tracking-tight mb-1">High-Quality Lead Generation</div>
-                    <div className="text-gray-600">We create chatbots that generate high-quality leads, gathering valuable information and qualifying leads before your sales team's involvement, improving the efficiency of your customer acquisition process.</div>
+                    <div className="font-bold leading-snug tracking-tight mb-1">Efficient Customer Service Automation</div>
+                    <div className="text-gray-600">Our chatbots efficiently and personally handle customer queries 24/7, enhancing the customer experience while reducing your team's workload, freeing them for strategic tasks.</div>
                   </div>
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
                     <svg className="w-3 h-3 fill-current" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -114,8 +115,7 @@ export default function Features() {
                     unmount={false}                     
                   >
                     <div className="relative inline-flex flex-col">
-                      <Image className="md:max-w-none mx-auto rounded" src={FeaturesBg} width={500} height="462" alt="Features bg" />
-                      <Image className="md:max-w-none absolute w-full left-0 transform animate-float" src={FeaturesElement} width={500} height="44" alt="Element" style={{ top: '30%' }} />
+                      <Image className="md:max-w-none mx-auto rounded" src={LeadGeneratorBot} width={500} alt="Lead generator bot image" />
                     </div>
                   </Transition>
                   
@@ -134,8 +134,7 @@ export default function Features() {
                     unmount={false}                     
                   >
                     <div className="relative inline-flex flex-col">
-                      <Image className="md:max-w-none mx-auto rounded" src={FeaturesBg} width={500} height="462" alt="Features bg" />
-                      <Image className="md:max-w-none absolute w-full left-0 transform animate-float" src={FeaturesElement} width={500} height="44" alt="Element" style={{ top: '30%' }} />
+                      <Image className="md:max-w-none mx-auto rounded" src={ClientSupportBot} width={500} alt="Client support bot image" />
                     </div>
                   </Transition>
                   {/* Item 3 */}
@@ -153,8 +152,7 @@ export default function Features() {
                     unmount={false}                     
                   >
                     <div className="relative inline-flex flex-col">
-                      <Image className="md:max-w-none mx-auto rounded" src={FeaturesBg} width={500} height="462" alt="Features bg" />
-                      <Image className="md:max-w-none absolute w-full left-0 transform animate-float" src={FeaturesElement} width={500} height="44" alt="Element" style={{ top: '30%' }} />
+                      <Image className="md:max-w-none mx-auto rounded" src={AdminBot} width={500} alt="Admin bot image" />
                     </div>
                   </Transition>
                 </div>
