@@ -1,8 +1,13 @@
+'use client'
 import VideoThumb from '@/public/images/hero-image.png'
 import ModalVideo from '@/components/modal-video'
 import Link from 'next/link'
 
 export default function Hero() {
+
+  const openChatbot = () => {
+    window.botpressWebChat.sendEvent({ type: 'toggle' })
+  }
   return (
     <section className="relative">
 
@@ -38,7 +43,7 @@ export default function Hero() {
                   <Link className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 md:mb-0 md:w-auto min-w-48" href="#0">Get started today</Link>
                 </div>
                 <div>
-                  <a className="btn text-white bg-gray-900 hover:bg-gray-800 w-full md:w-auto md:ml-4 min-w-48" href="#0">Try our demo</a>
+                  <a onClick={openChatbot} className="btn text-white bg-gray-900 hover:bg-gray-800 w-full md:w-auto md:ml-4 min-w-48" href="#0">Try our demo</a>
                 </div>
               </div>
             </div>
