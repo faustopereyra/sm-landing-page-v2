@@ -2,6 +2,7 @@ import "./css/style.css";
 
 import { GeistSans } from "geist/font/sans";
 import Header from "@/components/ui/header";
+import Chatbot from "@/components/ui/chatbot";
 
 export const metadata = {
   title: "SiliconMind AI",
@@ -22,6 +23,7 @@ export default function RootLayout({
           <Header />
           {children}
         </div>
+      <Chatbot/>
       </body>
     </html>
   );
