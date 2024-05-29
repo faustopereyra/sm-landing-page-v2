@@ -23,9 +23,8 @@ const Chatbot = () => {
         botName: "AI Assistant",
         stylesheet: "https://webchat-styler-css.botpress.app/prod/code/ff7b6e0c-54f9-4315-90de-894888d97a2b/v73805/style.css",
         frontendVersion: "v1",
-        useSessionStorage: true,
         theme: "prism",
-        themeColor: "#2563eb"
+        themeColor: "#2563eb",
       })
 
     }
