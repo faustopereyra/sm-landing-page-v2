@@ -1,7 +1,7 @@
 "use client";
-import VideoThumb from "@/public/images/hero-image.png";
-import ModalVideo from "@/components/modal-video";
 import Link from "next/link";
+import Image from "next/image";
+import heroImage from "public/images/heroImage.png";
 
 export default function Hero() {
   const openChatbot = () => {
@@ -12,7 +12,7 @@ export default function Hero() {
     <section className="relative">
       {/* Illustration behind hero content */}
       <div
-        className="absolute left-1/2 transform -translate-x-1/2 bottom-0 pointer-events-none -z-1"
+        className="absolute left-1/2 transform -translate-x-1/2 bottom-0  -z-1"
         aria-hidden="true"
       >
         <svg
@@ -35,8 +35,9 @@ export default function Hero() {
             </linearGradient>
           </defs>
           <g fill="url(#illustration-01)" fillRule="evenodd">
-            <circle cx="1232" cy="128" r="128" />
-            <circle cx="155" cy="443" r="64" />
+            <circle cx="1172" cy="238" r="138" />
+            <circle cx="231" cy="113" r="90" />
+            <circle cx="165" cy="343" r="64" />
           </g>
         </svg>
       </div>
@@ -93,7 +94,15 @@ export default function Hero() {
           </div>
 
           {/* Hero image */}
-          <ModalVideo
+          <Image
+            data-aos="zoom-y-out"
+            className="mx-auto hidden md:block pointer-events-none"
+            src={heroImage}
+            alt="hero image"
+            width={600}
+            height={500}
+          />
+          {/* <ModalVideo
             thumb={VideoThumb}
             thumbWidth={768}
             thumbHeight={432}
@@ -101,7 +110,7 @@ export default function Hero() {
             video="/videos/video.mp4"
             videoWidth={1920}
             videoHeight={1080}
-          />
+          /> */}
         </div>
       </div>
     </section>
