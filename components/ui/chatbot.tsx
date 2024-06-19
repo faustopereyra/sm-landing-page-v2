@@ -1,15 +1,15 @@
-'use client'
-import React, { useEffect } from 'react'
-
+"use client";
+import React, { useEffect } from "react";
 
 const Chatbot = () => {
   useEffect(() => {
-    const script = document.createElement('script')
-    script.src = 'https://cdn.botpress.cloud/webchat/v1/inject.js'
-    script.async = true
-    document.body.appendChild(script)
- 
+    const script = document.createElement("script");
+    script.src = "https://cdn.botpress.cloud/webchat/v1/inject.js";
+    script.async = true;
+    document.body.appendChild(script);
+
     script.onload = () => {
+      //@ts-ignore
       window.botpressWebChat.init({
         composerPlaceholder: "Chat with AI Assistant",
         botConversationDescription: "Powered by SiliconMind",
@@ -21,17 +21,16 @@ const Chatbot = () => {
         lazySocket: true,
         themeName: "prism",
         botName: "AI Assistant",
-        stylesheet: "https://webchat-styler-css.botpress.app/prod/code/ff7b6e0c-54f9-4315-90de-894888d97a2b/v73805/style.css",
+        stylesheet:
+          "https://webchat-styler-css.botpress.app/prod/code/ff7b6e0c-54f9-4315-90de-894888d97a2b/v73805/style.css",
         frontendVersion: "v1",
         theme: "prism",
         themeColor: "#2563eb",
-      })
+      });
+    };
+  }, []);
 
-    }
-  }, [])
- 
-  return <div id="webchat" />
-}
- 
-export default Chatbot
+  return <div id="webchat" />;
+};
 
+export default Chatbot;

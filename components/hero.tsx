@@ -79,15 +79,13 @@ export default function Hero() {
                     Get started today
                   </Link>
                 </div>
-                <div>
-                  <span
-                    onClick={openChatbot}
-                    className="btn text-white bg-gray-900 hover:bg-gray-800 w-full md:w-auto md:ml-4 min-w-48"
-                    data-aos="zoom-y-out"
-                    data-aos-delay="150"
-                  >
-                    Try our demo
-                  </span>
+                <div
+                  onClick={openChatbot}
+                  className="btn text-white bg-gray-900 hover:bg-gray-800 w-full md:w-auto md:ml-4 min-w-48 cursor-pointer"
+                  data-aos="zoom-y-out"
+                  data-aos-delay="150"
+                >
+                  Try our demo
                 </div>
               </div>
             </div>
