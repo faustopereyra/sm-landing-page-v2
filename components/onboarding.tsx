@@ -51,7 +51,7 @@ export default function Onboarding() {
             </p>
           </div>
         </div>
-        <div className="pt-12 md:pt-20 z-50 relative">
+        <div className="pt-12 md:pt-20 z-50">
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12">
             <h2 className="h2 mb-4 relative">
@@ -60,7 +60,10 @@ export default function Onboarding() {
                 AI Integration
               </span>{" "}
             </h2>
-            <p className="text-xl text-gray-600" data-aos="zoom-y-out">
+            <p
+              className="text-xl text-gray-600  relative"
+              data-aos="zoom-y-out"
+            >
               We handle the entire development process, from the initial design
               to the final deployment and even provide support to ensure your AI
               application is always running smoothly.

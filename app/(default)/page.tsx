@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "SiliconMind HomePage",
+  title: "SiliconMind AI HomePage",
   description: "Chatbot Development and AI Automation",
 };
 

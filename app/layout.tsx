@@ -3,6 +3,7 @@ import "./css/style.css";
 import { GeistSans } from "geist/font/sans";
 import Header from "@/components/ui/header";
 import Chatbot from "@/components/ui/chatbot";
+import Footer from "@/components/ui/footer";
 
 export const metadata = {
   title: "SiliconMind AI",
@@ -22,8 +23,9 @@ export default function RootLayout({
         <div className="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
           <Header />
           {children}
+          <Footer />
         </div>
-      <Chatbot/>
+        <Chatbot />
       </body>
     </html>
   );

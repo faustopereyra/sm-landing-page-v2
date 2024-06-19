@@ -72,7 +72,7 @@ export default function MobileMenu() {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <ul className="px-5 py-2">
+          <ul className="px-5 py-2 text-xl">
             <li>
               <Link
                 href="/"

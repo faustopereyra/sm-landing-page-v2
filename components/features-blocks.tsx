@@ -20,7 +20,7 @@ const FeatureData = [
     icon: <HiSparkles {...IconsSetting} />,
   },
   {
-    title: "Expand Your Reach",
+    title: "Break Barriers",
     subtitle: "Speaks your customers' language, no matter where they are.",
     icon: <LiaLanguageSolid {...IconsSetting} />,
   },
@@ -64,7 +64,7 @@ export default function FeaturesBlocks() {
           {/* Items */}
           <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none">
             {FeatureData.map((feature) => (
-              <FeatureCard {...feature} />
+              <FeatureCard {...feature} key={feature.title} />
             ))}
           </div>
         </div>
