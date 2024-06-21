@@ -1,11 +1,5 @@
-"use client";
-
 import Link from "next/link";
 
-export const metadata = {
-  title: "SiliconMind AI - Contact",
-  description: "SiliconMind AI success registration page",
-};
 
 export default function FormSuccessPage() {
   return (
@@ -36,7 +30,7 @@ export default function FormSuccessPage() {
             href={"/"}
             className="btn mt-16 text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 md:mb-0 md:w-auto min-w-48"
           >
-            Go to HomePage
+            Back to HomePage
           </Link>
         </div>
       </div>

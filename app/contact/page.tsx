@@ -1,10 +1,5 @@
 "use client";
 
-export const metadata = {
-  title: "SiliconMind AI - Contact",
-  description: "SiliconMind AI contact page",
-};
-
 import { useForm } from "react-hook-form";
 
 export default function ContactPage() {
