@@ -36,7 +36,7 @@
       <button type="submit">Let's talk</button>
     </form>
 
-    <form name="newsletter" netlify>
+    <form method="POST" name="newsletter" netlify>
       <input type="hidden" name="form-name" value="newsletter" />
       <label>Email </label>
       <input type="email" name="newsletter" id="newsletter" />
@@ -44,3 +44,17 @@
     </form>
   </body>
 </html>
+
+const encode = (data) => {
+  return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+}
+
+fetch("/", {
+  method: "POST",
+  headers: { "Content-Type": "application/x-www-form-urlencoded" },
+  body: encode({ "form-name": "newsletter", "newsletter": "exano@email.com" })
+})
+  .then(() => alert("Success!"))
+  .catch(error => alert(error));

@@ -1,24 +1,9 @@
 "use client";
 import Link from "next/link";
 import Logo from "./logo";
-import { useState } from "react";
+import { FormEvent, useRef, useState } from "react";
+import { encodeURL } from "@/utils";
 
-interface linkeableItemProps {
-  legend: string;
-  path: string;
-}
-function LinkeableItem({ legend, path }: linkeableItemProps) {
-  return (
-    <li className="mb-2">
-      <Link
-        href={path}
-        className="cursor-pointer text-gray-600 hover:text-gray-900 hover:underline transition duration-150 ease-in-out"
-      >
-        {legend}
-      </Link>
-    </li>
-  );
-}
 const productsLinks = [
   {
     legend: "Chatbot Development",
@@ -50,10 +35,30 @@ const companyLinks = [
 
 export default function Footer() {
   const [isSubmited, setIsSubmited] = useState(false);
+  const inputRef = useRef(null);
 
   const openChatbot = () => {
     //@ts-ignore
     window.botpressWebChat.sendEvent({ type: "toggle" });
+  };
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encodeURL({
+        "form-name": "newsletter",
+        //@ts-ignore
+        newsletter: inputRef.current.value,
+      }),
+    })
+      .then(() => {
+        setIsSubmited(true);
+      })
+      .catch(() => {
+        alert("Upps... Something wrong happens, please try again later");
+      });
   };
 
   return (
@@ -122,13 +127,7 @@ export default function Footer() {
                 <p className="text-sm text-gray-600 mb-4">
                   Get the latest news and articles to your inbox every month.
                 </p>
-                <form
-                  name="newsletter"
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    setIsSubmited(true);
-                  }}
-                >
+                <form name="newsletter" onSubmit={(e) => handleSubmit(e)}>
                   <input type="hidden" name="form-name" value="newsletter" />
                   <div className="flex flex-wrap mb-4">
                     <div className="w-full">
@@ -140,6 +139,7 @@ export default function Footer() {
                       </label>
                       <div className="relative flex items-center max-w-xs">
                         <input
+                          ref={inputRef}
                           id="newsletter"
                           name="newsletter"
                           type="email"
@@ -204,5 +204,22 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+interface linkeableItemProps {
+  legend: string;
+  path: string;
+}
+function LinkeableItem({ legend, path }: linkeableItemProps) {
+  return (
+    <li className="mb-2">
+      <Link
+        href={path}
+        className="cursor-pointer text-gray-600 hover:text-gray-900 hover:underline transition duration-150 ease-in-out"
+      >
+        {legend}
+      </Link>
+    </li>
   );
 }
