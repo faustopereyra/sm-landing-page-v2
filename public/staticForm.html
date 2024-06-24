@@ -13,27 +13,46 @@
       <input type="hidden" name="form-name" value="contact" />
 
       <!-- First Name -->
-      <label for="first-name">First name</label>
-      <input type="text" id="first-name" name="firstName" />
+      <div>
+        <label for="firstName">First name</label>
+        <input type="text" id="firstName" name="firstName" />
+      </div>
 
       <!-- Last Name -->
-      <label for="lastName">Last name</label>
-      <input type="text" id="lastName" name="lastName" />
-
+      <div>
+        <label for="lastName">Last name</label>
+        <input type="text" id="lastName" name="lastName" />
+      </div>
       <!-- Company Name -->
-      <label for="company">Company name</label>
-      <input type="text" id="company" name="company" />
+      <div>
+        <label for="company">Company name</label>
+        <input type="text" id="company" name="company" />
+      </div>
 
       <!-- Email -->
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" />
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" />
+      </div>
 
       <!-- Project Details -->
-      <label for="projectDetails">Project Details</label>
-      <textarea id="projectDetails" name="projectDetails" rows="4"></textarea>
+      <div>
+        <label for="projectDetails">Project Details</label>
+        <textarea id="projectDetails" name="projectDetails" rows="4"></textarea>
+      </div>
 
       <!-- Submit Button -->
       <button type="submit">Let's talk</button>
+    </form>
+    <form name="newsletter" netlify>
+      <input type="hidden" name="form-name" value="newsletter" />
+      <div>
+        <label>Email </label>
+        <div>
+          <input type="email" name="newsletter" id="newsletter" />
+          <button type="submit">Send</button>
+        </div>
+      </div>
     </form>
   </body>
 </html>
