@@ -7,8 +7,8 @@ import Logo from "./logo";
 import MobileMenu from "./mobile-menu";
 
 const navigationItems = [
-  { href: "/chatbots", text: "Our Chatbots" },
-  { href: "/about", text: "About Us" },
+  //{ href: "/chatbots", text: "Our Chatbots" },
+  //{ href: "/about", text: "About Us" },
   { href: "/process", text: "How we Work" },
 ];
 
@@ -65,7 +65,7 @@ export default function Header() {
               </li>
             </ul>
           </nav>
-          <MobileMenu />
+          <MobileMenu tabs={navigationItems} />
         </div>
       </div>
     </header>

@@ -4,7 +4,13 @@ import { useState, useRef, useEffect } from "react";
 import { Transition } from "@headlessui/react";
 import Link from "next/link";
 
-export default function MobileMenu() {
+interface MobileMenuProps {
+  tabs: {
+    text: string;
+    href: string;
+  }[];
+}
+export default function MobileMenu({ tabs }: MobileMenuProps) {
   const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false);
 
   const trigger = useRef<HTMLButtonElement>(null);
@@ -82,24 +88,17 @@ export default function MobileMenu() {
                 Home
               </Link>
             </li>
-            <li>
-              <Link
-                href="/about"
-                className="flex font-medium w-full text-gray-600 hover:text-gray-900 py-2 justify-center"
-                onClick={() => setMobileNavOpen(false)}
-              >
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/faqs"
-                className="flex font-medium w-full text-gray-600 hover:text-gray-900 py-2 justify-center"
-                onClick={() => setMobileNavOpen(false)}
-              >
-                FAQs
-              </Link>
-            </li>
+            {tabs.map((tab) => (
+              <li>
+                <Link
+                  href={tab.href}
+                  className="flex font-medium w-full text-gray-600 hover:text-gray-900 py-2 justify-center"
+                  onClick={() => setMobileNavOpen(false)}
+                >
+                  {tab.text}
+                </Link>
+              </li>
+            ))}
             <li>
               <Link
                 href="/contact"

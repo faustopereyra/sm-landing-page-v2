@@ -7,7 +7,7 @@ import { encodeURL } from "@/utils";
 const productsLinks = [
   {
     legend: "Chatbot Development",
-    path: "/chatbots",
+    path: "#chatbots-dev",
   },
   {
     legend: "Consulting",
@@ -95,9 +95,9 @@ export default function Footer() {
                   Try our Chatbot
                 </span>
               </li>
-              {resourceLinks.map((item, index) => (
+              {/* {resourceLinks.map((item, index) => (
                 <LinkeableItem key={index} {...item} />
-              ))}
+              ))} */}
             </ul>
           </div>
 
