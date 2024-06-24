@@ -42,6 +42,7 @@ export default function ContactPage() {
           action="/contact/success"
           className="mx-auto mt-16 max-w-xl sm:mt-20"
         >
+          <input type="hidden" name="form-name" value="contact" />
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
             <div data-aos="zoom-y-out" data-aos-delay="100">
               <label

@@ -129,6 +129,7 @@ export default function Footer() {
                     setIsSubmited(true);
                   }}
                 >
+                  <input type="hidden" name="form-name" value="newsletter" />
                   <div className="flex flex-wrap mb-4">
                     <div className="w-full">
                       <label
