@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-
 export default function FormSuccessPage() {
   return (
     <section className="bg-gradient-to-b from-gray-100 to-white">
