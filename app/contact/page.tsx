@@ -1,15 +1,33 @@
 "use client";
 
+import { encodeURL } from "@/utils";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 
 export default function ContactPage() {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = handleSubmit((data) => {});
+  const onSubmit = handleSubmit((data) => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encodeURL({
+        "form-name": "contact",
+        ...data,
+      }),
+    })
+      .then(() => {
+        router.push("/contact/success");
+      })
+      .catch(() => {
+        alert("Upps... Something wrong happens, please try again later");
+      });
+  });
 
   return (
     <section className="bg-gradient-to-b from-gray-100 to-white">
@@ -42,6 +60,7 @@ export default function ContactPage() {
           action="/contact/success"
           className="mx-auto mt-16 max-w-xl sm:mt-20"
         >
+          <input type="hidden" name="form-name" value="contact" />
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
             <div data-aos="zoom-y-out" data-aos-delay="100">
               <label
