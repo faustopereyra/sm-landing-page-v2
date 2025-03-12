@@ -1,6 +1,5 @@
 "use client";
 
-import { encodeURL } from "@/utils";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 
@@ -12,21 +11,30 @@ export default function ContactPage() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = handleSubmit((data) => {
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encodeURL({
-        "form-name": "contact",
-        ...data,
-      }),
-    })
-      .then(() => {
-        router.push("/contact/success");
-      })
-      .catch(() => {
-        alert("Upps... Something wrong happens, please try again later");
+  const onSubmit = handleSubmit(async (data) => {
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: `${data.firstName} ${data.lastName}`,
+          email: data.email,
+          company: data.company,
+          objective: data.projectDetails,
+          isCourseUser: false
+        }),
       });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
+      router.push("/contact/success");
+    } catch (error) {
+      alert("Something went wrong. Please try again later.");
+    }
   });
 
   return (
